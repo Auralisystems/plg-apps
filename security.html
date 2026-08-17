@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Policy — PLG Apps</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+         color: #172b4d; background: #fff; }
+  @media (prefers-color-scheme: dark) { body { color: #c7d1db; background: #1d2125; }
+    a { color: #669df1; } code { background: #22272b; } }
+  h1 { font-size: 1.75rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; }
+  .meta { color: #626f86; font-size: .9rem; margin: 0 0 2rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: .35rem; }
+  code { background: #f1f2f4; padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #dfe1e6;
+           color: #626f86; font-size: .875rem; }
+</style>
+</head>
+<body>
+
+<h1>Security Policy</h1>
+<p class="meta">PLG Apps · Applies to all apps published by PLG Apps Studio on the Atlassian Marketplace · Last updated 17 August 2026</p>
+
+<h2>Reporting a vulnerability</h2>
+<p>Email <a href="mailto:plgapps.support@gmail.com">plgapps.support@gmail.com</a> with
+the subject line <code>SECURITY</code>. Please include the app name, the affected Atlassian
+product, and enough detail to reproduce the issue.</p>
+<p>We acknowledge security reports within <strong>two business days</strong> and prioritise
+them over other work. We will tell you what we found and when a fix ships.</p>
+<p>Please give us a reasonable opportunity to fix an issue before disclosing it publicly.
+We do not operate a bug bounty programme and cannot offer payment, but we will credit
+reporters who ask to be credited.</p>
+
+<h2>What the attack surface actually is</h2>
+<p>Our apps run entirely on Atlassian-hosted infrastructure. We operate no servers,
+databases, load balancers, or administrative consoles of our own, and our apps declare
+no external domains. There is no infrastructure of ours to compromise, and no copy of
+customer data outside Atlassian cloud.</p>
+<p>In practice this means the meaningful surface is the app's own code: how it handles
+content a user enters, and how it uses the Atlassian platform APIs.</p>
+
+<h2>In scope</h2>
+<ul>
+  <li>Cross-site scripting or content injection through note content.</li>
+  <li>Any path that lets one user read or modify content they should not have access to.</li>
+  <li>Incorrect handling of Atlassian platform permissions or scopes.</li>
+  <li>Vulnerable third-party dependencies shipped in the app bundle.</li>
+</ul>
+
+<h2>Out of scope</h2>
+<ul>
+  <li>Vulnerabilities in Atlassian's own products or platform — please report those to
+      <a href="https://www.atlassian.com/trust/security/report-a-vulnerability">Atlassian</a>.</li>
+  <li>Findings that require an attacker to already hold administrative access to the
+      customer's Atlassian site.</li>
+  <li>Automated scanner output with no demonstrated impact.</li>
+  <li>Denial of service against Atlassian infrastructure.</li>
+</ul>
+
+<h2>How we handle content</h2>
+<p>Content displayed by our apps is sanitised before rendering, using an allow-list of
+tags, attributes and URL schemes, so a shared dashboard cannot be used to execute scripts
+in another user's browser. Links are forced to open in a new tab without access to the
+originating page.</p>
+
+<h2>Dependencies and updates</h2>
+<p>Third-party dependencies are pinned and reviewed when the app is updated. Fixes are
+deployed through Atlassian Forge, which updates every installation without customers
+needing to take action.</p>
+
+<h2>What we do not claim</h2>
+<p>We are an independent developer. We do not hold SOC 2 or ISO 27001 certification, we do
+not run third-party penetration tests, and we do not operate a bug bounty. We state this
+plainly because the strength of this approach is that there is no infrastructure of ours
+to audit — not that audits have been performed.</p>
+
+<footer>
+  PLG Apps · <a href="./privacy.html">Privacy Policy</a> ·
+  <a href="./terms.html">Terms of Service</a> · <a href="./">Home</a>
+</footer>
+
+</body>
+</html>
